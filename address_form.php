@@ -43,13 +43,7 @@ $addressCount = $_SESSION["addressCount"];
                 echo "</select>";
 
                 echo "<label for='city$i'>City:</label>";
-                echo "<select id='city$i' name='city[]' required>";
-                echo "<option value='Montreal'>Montreal</option>";
-                echo "<option value='Laval'>Laval</option>";
-                echo "<option value='Toronto'>Toronto</option>";
-                echo "<option value='Quebec'>Quebec</option>";
-                // Ajoutez d'autres options au besoin
-                echo "</select>";
+                echo "<input type='text' id='city$i' name='city[]' maxlength='50' required>";
             }
             ?>
             <button type="submit">Enregistrer</button>
