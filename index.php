@@ -44,11 +44,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<p class='error'>$error</p>";
         }
         ?>
-
+        
         <form action="index.php" method="post">
             <label for="addressCount">Nombre d'adresses :</label>
             <input type="number" id="addressCount" name="addressCount" min="1" value="<?php echo $addressCount; ?>" required>
-
             <button type="submit">Continuer</button>
         </form>
     </div>

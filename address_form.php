@@ -10,6 +10,7 @@ if (!isset($_SESSION["addressCount"])) {
 
 // Récupérer le nombre d'adresses depuis la session
 $addressCount = $_SESSION["addressCount"];
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +24,6 @@ $addressCount = $_SESSION["addressCount"];
 <body>
     <div class="container">
         <h2>Formulaire d'adresse</h2>
-
         <form action="process.php" method="post">
             <?php
             // Afficher les champs d'adresse en fonction du nombre d'adresses
@@ -52,7 +52,6 @@ $addressCount = $_SESSION["addressCount"];
                 echo "</select>";
             }
             ?>
-
             <button type="submit">Enregistrer</button>
         </form>
     </div>

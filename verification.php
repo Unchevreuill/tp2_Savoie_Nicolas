@@ -1,20 +1,20 @@
 <?php
 session_start();
 
-// Vérif pour voir si mes donner sont dans ma variable de sessions
+// Vérifier si le nombre d'adresses est défini dans la session
 if (!isset($_SESSION["addressCount"])) {
-    // si vide, redirection a index.php
+    // Rediriger vers la page d'accueil si le nombre d'adresses n'est pas défini
     header("Location: index.php");
     exit();
 }
 
-// internal import
+// Internal import
 include_once("db_config.php");
 
-// recuperation de mes variables de sessions
+// Récupération des variables de session
 $addressCount = $_SESSION["addressCount"];
 
-// Afficher ladresse pour verif
+// Afficher l'adresse pour vérification
 echo "<h2>Récapitulatif des adresses</h2>";
 for ($i = 0; $i < $addressCount; $i++) {
     $street = $_SESSION["street"][$i];
