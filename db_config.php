@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$username = "localhost";
+$username = "root";
 $password = "";
 $dbname = "ecom1_tp2";
 
