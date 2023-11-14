@@ -17,10 +17,10 @@ $addressCount = $_SESSION["addressCount"];
 // Afficher ladresse pour verif
 echo "<h2>Récapitulatif des adresses</h2>";
 for ($i = 0; $i < $addressCount; $i++) {
-    $street = $_POST["street"][$i];
-    $street_nb = $_POST["street_nb"][$i];
-    $type = $_POST["type"][$i];
-    $city = $_POST["city"][$i];
+    $street = $_SESSION["street"][$i];
+    $street_nb = $_SESSION["street_nb"][$i];
+    $type = $_SESSION["type"][$i];
+    $city = $_SESSION["city"][$i];
 
     echo "<p>Adresse ", $i + 1, ":</p>";
     echo "<p>Street: ", $street, "</p>";
