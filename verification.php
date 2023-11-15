@@ -27,12 +27,6 @@ for ($i = 0; $i < $addressCount; $i++) {
     echo "<p>Street Number: ", $street_nb, "</p>";
     echo "<p>Type: ", $type, "</p>";
     echo "<p>City: ", $city, "</p>";
-
-    // Insérer les données dans la base de données
-    $stmt = $conn->prepare("INSERT INTO adresse (street, street_nb, type, city) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("siss", $street, $street_nb, $type, $city);
-    $stmt->execute();
-    $stmt->close();
 }
 
 // Fermer la connexion
@@ -50,7 +44,8 @@ $conn->close();
 <body>
     <div class="container">
         <p>Les données ont été enregistrées avec succès dans la base de données.</p>
-        <a href="index.php">Retour à la page d'accueil</a>
+        <a href="index.php" class="return-home">Retour à la page d'accueil</a>
+        <a href="address_form.php" class="return-home">Modifier</a> <!-- Ajout du bouton Modifier -->
     </div>
 </body>
 </html>

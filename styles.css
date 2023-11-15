@@ -1,37 +1,72 @@
+/* Styles généraux */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 50px auto;
-    background-color: #fff;
     padding: 20px;
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+h2 {
+    color: #333;
+}
+
+/* Formulaire d'adresse */
 form {
-    display: flex;
-    flex-direction: column;
+    margin-top: 20px;
 }
 
 label {
-    margin-bottom: 10px;
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
 }
 
-input, select, button {
-    margin-bottom: 15px;
+input,
+select {
+    width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
 }
 
 button {
-    background-color: #4caf50;
+    background-color: #333;
     color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Récapitulatif des adresses */
+p {
+    margin: 0;
+}
+
+/* Bouton de retour à la page d'accueil */
+.return-home {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte du bouton */
+    text-decoration: none; /* Supprime le soulignement du lien */
+    border-radius: 5px; /* Ajoute un bord arrondi au bouton */
+    transition: background-color 0.3s ease; /* Ajoute une transition de couleur de fond */
+}
+
+.return-home:hover {
+    background-color: #2980b9; /* Couleur de fond du bouton au survol */
 }

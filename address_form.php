@@ -28,22 +28,27 @@ $addressCount = $_SESSION["addressCount"];
             <?php
             // Afficher les champs d'adresse en fonction du nombre d'adresses
             for ($i = 0; $i < $addressCount; $i++) {
+                $street = isset($_SESSION["street"][$i]) ? $_SESSION["street"][$i] : '';
+                $street_nb = isset($_SESSION["street_nb"][$i]) ? $_SESSION["street_nb"][$i] : '';
+                $type = isset($_SESSION["type"][$i]) ? $_SESSION["type"][$i] : '';
+                $city = isset($_SESSION["city"][$i]) ? $_SESSION["city"][$i] : '';
+
                 echo "<h3>Adresse ", $i + 1, "</h3>";
                 echo "<label for='street$i'>Street:</label>";
-                echo "<input type='text' id='street$i' name='street[]' maxlength='50' required>";
+                echo "<input type='text' id='street$i' name='street[]' maxlength='50' value='$street' required>";
 
                 echo "<label for='street_nb$i'>Street Number:</label>";
-                echo "<input type='number' id='street_nb$i' name='street_nb[]' required>";
+                echo "<input type='number' id='street_nb$i' name='street_nb[]' value='$street_nb' required>";
 
                 echo "<label for='type$i'>Type:</label>";
                 echo "<select id='type$i' name='type[]' required>";
-                echo "<option value='livraison'>Livraison</option>";
-                echo "<option value='facturation'>Facturation</option>";
-                echo "<option value='autre'>Autre</option>";
+                echo "<option value='livraison' " . ($type === 'livraison' ? 'selected' : '') . ">Livraison</option>";
+                echo "<option value='facturation' " . ($type === 'facturation' ? 'selected' : '') . ">Facturation</option>";
+                echo "<option value='autre' " . ($type === 'autre' ? 'selected' : '') . ">Autre</option>";
                 echo "</select>";
 
                 echo "<label for='city$i'>City:</label>";
-                echo "<input type='text' id='city$i' name='city[]' maxlength='50' required>";
+                echo "<input type='text' id='city$i' name='city[]' value='$city' required>";
             }
             ?>
             <button type="submit">Enregistrer</button>
